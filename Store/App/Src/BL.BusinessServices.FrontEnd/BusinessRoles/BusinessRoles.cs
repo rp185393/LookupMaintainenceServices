@@ -10,9 +10,9 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
     public class BusinessRoles : IBusinessRoles
     {
         public BusinessRoles() { }
-        public virtual int role_id { get; set; }
-        public virtual string bus_unit_id { get; set; }
-        public virtual string vc_role_code { get; set; }
-        public virtual string vc_name { get; set; }
+        public virtual int Roleid { get; set; }
+        public virtual string BusinessUnitid { get; set; }
+        public virtual string Rolecode { get; set; }
+        public virtual string Name { get; set; }
     }
 }

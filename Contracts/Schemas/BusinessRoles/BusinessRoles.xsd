@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://retalix.com/R10/services" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://retalix.com/R10/services" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="../Common/RetalixCommonHeader.xsd"/>
-	<xs:include schemaLocation="../Common/ActionTypeCodes.xsd"/>
-	<xs:include schemaLocation="../Common/LookupServiceAbstract.xsd"/>
+<xs:schema xmlns="http://retalix.com/R10/services" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://retalix.com/R10/services"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<xs:include schemaLocation="..\Common\RetalixCommonHeader.xsd"/>
+	<xs:include schemaLocation="..\Common\ActionTypeCodes.xsd"/>
 	<xs:element name="BusinessRolesMaintenanceRequest" type="BusinessRolesMaintenanceRequest"/>
 	<xs:element name="BusinessRolesMaintenanceResponse" type="BusinessRolesMaintenanceResponse"/>
 
@@ -12,7 +14,7 @@
 	<xs:complexType name="BusinessRolesLookupRequest">
 		<xs:sequence>
 			<xs:element name="Header" type="RetalixCommonHeaderType" minOccurs="0"/>
-			<xs:element name="role_id" type="xs:int" />
+			<xs:element name="Roleid" type="xs:int" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -24,22 +26,18 @@
 	</xs:complexType>
 
 	<xs:complexType name="BusinessRolesMaintenanceRequest">
-		<xs:complexContent>
-			<xs:extension base="ServiceRequestAbstract">
-				<xs:sequence>
-					<xs:element name="Header" type="RetalixCommonHeaderType" minOccurs="0"/>
-					<xs:element name="BusinessRolesType" type="BusinessRolesType" minOccurs="0" maxOccurs="1"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>		
+		<xs:sequence>
+			<xs:element name="Header" type="RetalixCommonHeaderType" minOccurs="0"/>
+			<xs:element name="BusinessRolesType" type="BusinessRolesType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="BusinessRolesType">
 		<xs:sequence>
-			<xs:element name="roleid" type="xs:int" />
-			<xs:element name="busunitid" type="xs:string" />
-			<xs:element name="rolecode" type="xs:string" />
-			<xs:element name="rolename" type="xs:string" />
+			<xs:element name="Roleid" type="xs:int" />
+			<xs:element name="BusinessUnitid" type="xs:string" />
+			<xs:element name="Rolecode" type="xs:string" />
+			<xs:element name="Rolename" type="xs:string" />
 		</xs:sequence>
 		<xs:attribute name="Action" type="ActionTypeCodes"/>
 	</xs:complexType>

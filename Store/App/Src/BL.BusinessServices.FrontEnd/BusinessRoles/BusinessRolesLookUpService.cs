@@ -41,21 +41,21 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
         }
         protected override BusinessRolesLookupResponse InternalExecute()
         {
-            if (Request == null || Request.role_id.ToString() == null)
+            if (Request == null || Request.Roleid.ToString() == null)
                 return null;
 
-            Lookup(Request.role_id.ToString());
+            Lookup(Request.Roleid.ToString());
             return BuildResponse();
         }
         private IEnumerable<IBusinessRoles> GetBusinessRoles(IEnumerable<string> businessroleIds)
         {
             var businessUnits = new List<IBusinessRoles>();
-            foreach (var role_id in businessroleIds)
+            foreach (var Roleid in businessroleIds)
             {
-                var businessrole = _bussinessRolesDao.Get(role_id);
+                var businessrole = _bussinessRolesDao.Get(Roleid);
                 if (null == businessrole)
                 {
-                    throw new BusinessUnitIdNotFoundException(role_id);
+                    throw new BusinessUnitIdNotFoundException(Roleid);
                 }
                 businessUnits.Add(businessrole);
             }

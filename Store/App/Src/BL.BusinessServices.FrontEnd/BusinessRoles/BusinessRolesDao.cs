@@ -22,13 +22,13 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
         }
         public IBusinessRoles Find(string name)
         {
-            var query = Session.QueryOver<IBusinessRoles>().Where(u => u.vc_role_code == name);
+            var query = Session.QueryOver<IBusinessRoles>().Where(u => u.Rolecode == name);
             var returnedApplicationLink = query.SingleOrDefault();
             return returnedApplicationLink;
         }
         public IBusinessRoles Get(string Key)
         {
-            var criteria = Session.CreateCriteria(typeof(IBusinessRoles)).Add(Restrictions.Eq("role_id", Key));
+            var criteria = Session.CreateCriteria(typeof(IBusinessRoles)).Add(Restrictions.Eq("Roleid", Key));
             var result = criteria.List<IBusinessRoles>();
             return result.FirstOrDefault();
         }
@@ -37,22 +37,22 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
             List<IBusinessRoles> records = Session.Query<IBusinessRoles>().ToList();
             return records;
         }
-        public IBusinessRoles GetItemById(string role_id, string bus_unit_Id)
+        public IBusinessRoles GetItemById(string Roleid, string BusinessUnitid)
         {
             //Log.Info(message => message("BundleItemDao.GetBundleItemById : entered"));
 
             return Session.CreateCriteria(typeof(IBusinessRoles))
-                .Add(Restrictions.Eq("role_id", role_id))
-                .Add(Restrictions.Eq("BusinessUnitId", bus_unit_Id)).UniqueResult<IBusinessRoles>();
+                .Add(Restrictions.Eq("Roleid", Roleid))
+                .Add(Restrictions.Eq("BusinessUnitId", BusinessUnitid)).UniqueResult<IBusinessRoles>();
         }
         public void SaveOrUpdate(IBusinessRoles BusinessRole)
         {
-            var ExitingBusinessRole = Get(BusinessRole.role_id.ToString());
+            var ExitingBusinessRole = Get(BusinessRole.Roleid.ToString());
             if (ExitingBusinessRole != null)
             {
-                ExitingBusinessRole.vc_role_code = BusinessRole.vc_role_code;
-                ExitingBusinessRole.vc_name = BusinessRole.vc_name;
-                ExitingBusinessRole.bus_unit_id = BusinessRole.bus_unit_id;
+                ExitingBusinessRole.Rolecode = BusinessRole.Rolecode;
+                ExitingBusinessRole.Name = BusinessRole.Name;
+                ExitingBusinessRole.BusinessUnitid = BusinessRole.BusinessUnitid;
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
         }
         public void Update(IBusinessRoles BusinessRole)
         {
-            var _BusinessRole = Find(BusinessRole.vc_role_code);
+            var _BusinessRole = Find(BusinessRole.Rolecode);
             if (_BusinessRole == null)
                 Session.SaveOrUpdate(_BusinessRole);
             else

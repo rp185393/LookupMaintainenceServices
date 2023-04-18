@@ -16,9 +16,9 @@ namespace Retalix.Contracts.Generated.BusinessRoles
         
         private RetalixCommonHeaderType headerField;
         
-        private int role_idField;
+        private int roleidField;
         
-        private bool role_idFieldSpecified;
+        private bool RoleidFieldSpecified;
         
         public RetalixCommonHeaderType Header
         {
@@ -33,29 +33,29 @@ namespace Retalix.Contracts.Generated.BusinessRoles
         }
         
         [Retalix.Commons.Contracts.ContractValidationAttributes.ContractRequiredAttribute()]
-        public int role_id
+        public int Roleid
         {
             get
             {
-                return this.role_idField;
+                return this.roleidField;
             }
             set
             {
-                this.role_idField = value;
-                this.role_idSpecified = true;
+                this.roleidField = value;
+                this.RoleidSpecified = true;
             }
         }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public virtual bool role_idSpecified
+        public virtual bool RoleidSpecified
         {
             get
             {
-                return this.role_idFieldSpecified;
+                return this.RoleidFieldSpecified;
             }
             set
             {
-                this.role_idFieldSpecified = value;
+                this.RoleidFieldSpecified = value;
             }
         }
     }
