@@ -3,13 +3,13 @@
 				   assembly="Retalix.StoreServices.BusinessServices.FrontEnd">
 
 	<class name="BusinessRoles" table="BusinessRoles" lazy="false">
-		<id name="role_id" column="role_id" type="Guid">
+		<id name="Roleid" column="role_id" type="Guid">
 			<generator class="assigned" />
 		</id>
 		<!--<id name="role_id" column="role_id" type="int"/>-->
-		<property name="bus_unit_id" column="bus_unit_id" type="string"/>
-		<property name="vc_role_code" column="vc_role_code" type="string"/>
-		<property name="vc_name" column="vc_name" type="string"/>
+		<property name="BusinessUnitid" column="BusinessUnitid" type="string"/>
+		<property name="Rolecode" column="Rolecode" type="string"/>
+		<property name="Name" column="Name" type="string"/>
 
 	</class>	
 </hibernate-mapping>

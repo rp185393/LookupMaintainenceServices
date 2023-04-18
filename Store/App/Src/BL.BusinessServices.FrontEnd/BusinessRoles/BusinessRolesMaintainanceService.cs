@@ -45,7 +45,7 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
         private void Add(BusinessRolesMaintenanceRequest _businessRolesMaintenanceRequest)
         {
             var mappedLink = _mapper.Map<IBusinessRoles>(_businessRolesMaintenanceRequest.BusinessRolesType);
-            var existing = _bussinessRolesDao.Find(_businessRolesMaintenanceRequest.BusinessRolesType.role_id.ToString());
+            var existing = _bussinessRolesDao.Find(_businessRolesMaintenanceRequest.BusinessRolesType.Roleid.ToString());
             if (existing == null)
             {
                 _bussinessRolesDao.Save(mappedLink);
@@ -65,7 +65,7 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
 
             var mappedLink = _mapper.Map<IBusinessRoles>(_businessRolesMaintenanceRequest.BusinessRolesType);
 
-            var existing = _bussinessRolesDao.Find(_businessRolesMaintenanceRequest.BusinessRolesType.role_id.ToString());
+            var existing = _bussinessRolesDao.Find(_businessRolesMaintenanceRequest.BusinessRolesType.Roleid.ToString());
             if (existing == null)
             {
                 _bussinessRolesDao.Save(mappedLink);
@@ -81,7 +81,7 @@ namespace Retalix.StoreServices.BusinessServices.FrontEnd.BusinessRoles
         }
         private void Delete(BusinessRolesMaintenanceRequest _businessRolesMaintenanceRequest)
         {
-            var businessRoleToDelete = _bussinessRolesDao.Find(_businessRolesMaintenanceRequest.BusinessRolesType.role_id.ToString());
+            var businessRoleToDelete = _bussinessRolesDao.Find(_businessRolesMaintenanceRequest.BusinessRolesType.Roleid.ToString());
             if (businessRoleToDelete != null)
             {
                 _bussinessRolesDao.Delete(businessRoleToDelete);

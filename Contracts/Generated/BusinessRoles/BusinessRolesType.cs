@@ -14,70 +14,70 @@ namespace Retalix.Contracts.Generated.BusinessRoles
     public partial class BusinessRolesType
     {
         
-        private int role_idField;
+        private int roleidField;
         
-        private string bus_unit_idField;
+        private string businessUnitidField;
         
-        private string vc_role_codeField;
+        private string rolecodeField;
         
-        private string vc_nameField;
+        private string rolenameField;
         
         private ActionTypeCodes actionField;
         
         private bool actionFieldSpecified;
         
-        private bool role_idFieldSpecified;
+        private bool RoleidFieldSpecified;
         
         [Retalix.Commons.Contracts.ContractValidationAttributes.ContractRequiredAttribute()]
-        public int role_id
+        public int Roleid
         {
             get
             {
-                return this.role_idField;
+                return this.roleidField;
             }
             set
             {
-                this.role_idField = value;
-                this.role_idSpecified = true;
+                this.roleidField = value;
+                this.RoleidSpecified = true;
             }
         }
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
-        public string bus_unit_id
+        public string BusinessUnitid
         {
             get
             {
-                return this.bus_unit_idField;
+                return this.businessUnitidField;
             }
             set
             {
-                this.bus_unit_idField = value;
+                this.businessUnitidField = value;
             }
         }
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
-        public string vc_role_code
+        public string Rolecode
         {
             get
             {
-                return this.vc_role_codeField;
+                return this.rolecodeField;
             }
             set
             {
-                this.vc_role_codeField = value;
+                this.rolecodeField = value;
             }
         }
         
         [System.ComponentModel.DataAnnotations.RequiredAttribute()]
-        public string vc_name
+        public string Rolename
         {
             get
             {
-                return this.vc_nameField;
+                return this.rolenameField;
             }
             set
             {
-                this.vc_nameField = value;
+                this.rolenameField = value;
             }
         }
         
@@ -110,15 +110,15 @@ namespace Retalix.Contracts.Generated.BusinessRoles
         }
         
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public virtual bool role_idSpecified
+        public virtual bool RoleidSpecified
         {
             get
             {
-                return this.role_idFieldSpecified;
+                return this.RoleidFieldSpecified;
             }
             set
             {
-                this.role_idFieldSpecified = value;
+                this.RoleidFieldSpecified = value;
             }
         }
     }
